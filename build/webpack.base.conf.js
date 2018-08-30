@@ -10,6 +10,7 @@ function resolve(dir) {
 }
 
 const createLintingRule = () => ({
+  /*关闭esline编码规范验证
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
@@ -18,6 +19,7 @@ const createLintingRule = () => ({
     formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
+  */
 })
 
 module.exports = {
