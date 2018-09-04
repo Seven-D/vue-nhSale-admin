@@ -281,7 +281,7 @@ export const constantRouterMap = [
         ]
     },
 
-/*
+
     {
         path: '/example',
         component: Layout,
@@ -360,7 +360,7 @@ export const constantRouterMap = [
             }
         ]
     },
- */
+
 
     {
         path: 'external-link',
