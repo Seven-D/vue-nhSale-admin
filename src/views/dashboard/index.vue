@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard-container">
-        <div class="dashboard-text">欢迎登陆南华销售系统！</div>
+        <div class="dashboard-text">欢迎登陆XX业务系统！</div>
         <div class="dashboard-text">你好，{{ name }}</div>
         <div class="dashboard-text">您有如下角色的权限:
             <div><span v-for="role in roles" :key="role">{{ role }}</span></div>

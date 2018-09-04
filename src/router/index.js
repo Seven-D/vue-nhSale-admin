@@ -45,6 +45,7 @@ export const constantRouterMap = [
         component: Layout,
         name: 'Reports',
         meta: {title: '报表', icon: 'nested'},
+        alwaysShow: true,
         children: [
             {
                 path: 'sale',
@@ -74,6 +75,7 @@ export const constantRouterMap = [
         component: Layout,
         name: 'Sale',
         meta: {title: '销售', icon: 'example'},
+        alwaysShow: true,
         children: [
             {
                 path: 'price',
@@ -207,44 +209,79 @@ export const constantRouterMap = [
     },
     //储运
     {
-        path: '/table',
+        path: '/snt',
         component: Layout,
-        name: 'StorageTransport',
+        name: 'SNT',
         meta: {title: '储运', icon: 'table'},
         alwaysShow: true,
         children: [
             {
-                path: 'index',
-                name: 'Deliver',
+                path: 'delivery',
+                name: 'Delivery',
                 meta: {title: '发货'},
-                component: () => import('@/views//table/index')
-            }
-        ]
-    },
-    //仓库
-    {
-        path: '/table',
-        component: Layout,
-        name: 'Repository',
-        meta: {title: '仓库', icon: 'eye'},
-        alwaysShow: true,
-        children: [
-            {
-                path: 'index',
-                name: 'In',
-                meta: {title: '入库'},
-                component: () => import('@/views//table/index')
+                component: () => import('@/service/snt/delivery/index')
             },
             {
-                path: 'index',
-                name: 'Out',
+                path: 'instore',
+                name: 'Instore',
+                meta: {title: '入库'},
+                component: () => import('@/service/snt/instore/index')
+            },{
+                path: 'outstore',
+                name: 'Outstore',
                 meta: {title: '出库'},
-                component: () => import('@/views//table/index')
+                component: () => import('@/service/snt/outstore/index')
+            },{
+                path: 'transtore',
+                name: 'Transtore',
+                meta: {title: '移库'},
+                component: () => import('@/service/snt/transtore/index')
             }
         ]
     },
 
+    //基础信息管理
+    {
+        path: '/baseinfo',
+        component: Layout,
+        name: 'Baseinfo',
+        meta: {title: '基础信息', icon: 'table'},
+        alwaysShow: true,
+        children:[
+            {
+                path:'contacts',
+                name:'Contacts',
+                meta:{title:'联系人信息'},
+                component: () => import('@/service/baseinfo/contacts/index')
+            },
+            {
+                path:'customer',
+                name:'Customer',
+                meta:{title:'客户信息'},
+                component: () => import('@/service/baseinfo/customer/index')
+            },
+            {
+                path:'product',
+                name:'Product',
+                meta:{title:'产品信息'},
+                component: () => import('@/service/baseinfo/product/index')
+            },
+            {
+                path:'enterprise',
+                name:'Enterprise',
+                meta:{title:'企业信息'},
+                component: () => import('@/service/baseinfo/enterprise/index')
+            },
+            {
+                path:'warehouse',
+                name:'Warehouse',
+                meta:{title:'仓库信息'},
+                component: () => import('@/service/baseinfo/warehouse/index')
+            }
+        ]
+    },
 
+/*
     {
         path: '/example',
         component: Layout,
@@ -323,6 +360,7 @@ export const constantRouterMap = [
             }
         ]
     },
+ */
 
     {
         path: 'external-link',

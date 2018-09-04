@@ -1,11 +1,12 @@
 <template>
     <el-header>
-
+        这是网页头
     </el-header>
 </template>
+
 <script>
 export default {
-    name:'nHeader'
+
 }
 </script>
 
