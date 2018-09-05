@@ -91,7 +91,6 @@
                 getList(this.listQuery).then(response => {
                     this.list = response.data.items
                     this.listLoading = false
-                    console.log(this.listQuery)  // 这个参数怎么来的？？
                 })
             }
         }

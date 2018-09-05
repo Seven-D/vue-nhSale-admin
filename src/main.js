@@ -15,9 +15,15 @@ import store from './store'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-Vue.use(ElementUI, { locale })
+import axios from 'axios'
+import './mock/index' // mock 方式，正式发布时，注释掉该处即可
+import './mock/testMock1'
 
-Vue.config.productionTip = false
+Vue.prototype.$http = axios;
+
+Vue.use(ElementUI, { locale });
+
+Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
