@@ -88,30 +88,30 @@ export const constantRouterMap = [
                 path: 'order',
                 name: 'Order',
                 meta: {title: '订单'},
-                component:() => import('@/service/sale/order/index'), //父页面路由视图，这个要有
-                children:[
+                component: () => import('@/service/sale/order/index'), //父页面路由视图，这个要有
+                children: [
                     {
-                        path:'new',
-                        name:'NewOrder',
-                        meta:{title:'新增订单'},
+                        path: 'new',
+                        name: 'NewOrder',
+                        meta: {title: '新增订单'},
                         component: () => import('@/service/sale/order/newOrder')
                     },
                     {
-                        path:'list',
-                        name:'ListOrder',
-                        meta:{title:'订单列表'},
+                        path: 'list',
+                        name: 'ListOrder',
+                        meta: {title: '订单列表'},
                         component: () => import('@/service/sale/order/listOrder')
                     },
                     {
-                        path:'view',
-                        name:'ViewOrder',
-                        meta:{title:'订单显示'},
+                        path: 'view',
+                        name: 'ViewOrder',
+                        meta: {title: '订单显示'},
                         component: () => import('@/service/sale/order/viewOrder')
                     },
                     {
-                        path:'print',
-                        name:'PrintOrder',
-                        meta:{title:'订单打印'},
+                        path: 'print',
+                        name: 'PrintOrder',
+                        meta: {title: '订单打印'},
                         component: () => import('@/service/sale/order/printOrder')
                     }
                 ]
@@ -121,29 +121,29 @@ export const constantRouterMap = [
                 name: 'Contract',
                 meta: {title: '合同'},
                 component: () => import('@/service/sale/contract/index'),
-                children:[
+                children: [
                     {
-                        path:'pre',
-                        name:'PreContract',
-                        meta:{title:'待签合同列表'},
+                        path: 'pre',
+                        name: 'PreContract',
+                        meta: {title: '待签合同列表'},
                         component: () => import('@/service/sale/contract/preContract')
                     },
                     {
-                        path:'list',
-                        name:'ListContract',
-                        meta:{title:'合同列表'},
+                        path: 'list',
+                        name: 'ListContract',
+                        meta: {title: '合同列表'},
                         component: () => import('@/service/sale/contract/listContract')
                     },
                     {
-                        path:'view',
-                        name:'ViewContract',
-                        meta:{title:'合同显示'},
+                        path: 'view',
+                        name: 'ViewContract',
+                        meta: {title: '合同显示'},
                         component: () => import('@/service/sale/contract/viewContract')
                     },
                     {
-                        path:'print',
-                        name:'PrintContract',
-                        meta:{title:'订单打印'},
+                        path: 'print',
+                        name: 'PrintContract',
+                        meta: {title: '订单打印'},
                         component: () => import('@/service/sale/contract/printContract')
                     }
                 ]
@@ -153,29 +153,29 @@ export const constantRouterMap = [
                 name: 'Settle',
                 meta: {title: '结算'},
                 component: () => import('@/service/sale/settle/index'),
-                children:[
+                children: [
                     {
-                        path:'pre',
-                        name:'PreSettle',
-                        meta:{title:'待结算列表'},
+                        path: 'pre',
+                        name: 'PreSettle',
+                        meta: {title: '待结算列表'},
                         component: () => import('@/service/sale/settle/preSettle')
                     },
                     {
-                        path:'list',
-                        name:'ListSettle',
-                        meta:{title:'结算单列表'},
+                        path: 'list',
+                        name: 'ListSettle',
+                        meta: {title: '结算单列表'},
                         component: () => import('@/service/sale/settle/listSettle')
                     },
                     {
-                        path:'view',
-                        name:'ViewSettle',
-                        meta:{title:'结算单显示'},
+                        path: 'view',
+                        name: 'ViewSettle',
+                        meta: {title: '结算单显示'},
                         component: () => import('@/service/sale/settle/viewSettle')
                     },
                     {
-                        path:'print',
-                        name:'PrintSettle',
-                        meta:{title:'结算单打印'},
+                        path: 'print',
+                        name: 'PrintSettle',
+                        meta: {title: '结算单打印'},
                         component: () => import('@/service/sale/settle/printSettle')
                     }
                 ]
@@ -196,11 +196,11 @@ export const constantRouterMap = [
                 meta: {title: '收款'},
                 alwaysShow: true,
                 component: () => import('@/service/finance/receivables/index'), //父页面路由视图，这个要有
-                children:[
+                children: [
                     {
-                        path:'list',
-                        name:'ListRec',
-                        meta:{title:'待收款列表'},
+                        path: 'list',
+                        name: 'ListRec',
+                        meta: {title: '待收款列表'},
                         component: () => import('@/service/finance/receivables/listRec'),
                     }
                 ]
@@ -226,12 +226,12 @@ export const constantRouterMap = [
                 name: 'Instore',
                 meta: {title: '入库'},
                 component: () => import('@/service/snt/instore/index')
-            },{
+            }, {
                 path: 'outstore',
                 name: 'Outstore',
                 meta: {title: '出库'},
                 component: () => import('@/service/snt/outstore/index')
-            },{
+            }, {
                 path: 'transtore',
                 name: 'Transtore',
                 meta: {title: '移库'},
@@ -247,41 +247,41 @@ export const constantRouterMap = [
         name: 'Baseinfo',
         meta: {title: '基础信息', icon: 'table'},
         alwaysShow: true,
-        children:[
+        children: [
             {
-                path:'contacts',
-                name:'Contacts',
-                meta:{title:'联系人信息'},
+                path: 'contacts',
+                name: 'Contacts',
+                meta: {title: '联系人信息'},
                 component: () => import('@/service/baseinfo/contacts/index')
             },
             {
-                path:'customer',
-                name:'Customer',
-                meta:{title:'客户信息'},
+                path: 'customer',
+                name: 'Customer',
+                meta: {title: '客户信息'},
                 component: () => import('@/service/baseinfo/customer/index')
             },
             {
-                path:'product',
-                name:'Product',
-                meta:{title:'产品信息'},
+                path: 'product',
+                name: 'Product',
+                meta: {title: '产品信息'},
                 component: () => import('@/service/baseinfo/product/index')
             },
             {
-                path:'enterprise',
-                name:'Enterprise',
-                meta:{title:'企业信息'},
+                path: 'enterprise',
+                name: 'Enterprise',
+                meta: {title: '企业信息'},
                 component: () => import('@/service/baseinfo/enterprise/index')
             },
             {
-                path:'warehouse',
-                name:'Warehouse',
-                meta:{title:'仓库信息'},
+                path: 'warehouse',
+                name: 'Warehouse',
+                meta: {title: '仓库信息'},
                 component: () => import('@/service/baseinfo/warehouse/index')
             }
         ]
     },
 
-
+/*
     {
         path: '/example',
         component: Layout,
@@ -360,8 +360,24 @@ export const constantRouterMap = [
             }
         ]
     },
+*/
 
-
+    //测试
+    {
+        path: '/test',
+        name: 'Test',
+        meta: {title: '测试', icon: 'table'},
+        component: Layout,
+        alwaysShow: true,
+        children: [
+            {
+                path: '/test1',
+                meta: {title: '测试1'},
+                component: () => import('@/test/testMockNaxios')
+            },
+        ]
+    },
+//外部链接
     {
         path: 'external-link',
         component: Layout,
