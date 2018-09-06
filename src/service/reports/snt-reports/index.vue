@@ -1,18 +1,16 @@
 <template>
     <div class="hello">
-        <p>HELLO WORLD</p>
+        <h2 style="text-align: center">模拟数据，以下数据来自mock模拟，function（option）方式</h2>
         <p>{{datalist}}</p>
-        <ul>
+        <ol>
             <li v-for="(item,index) in datalist" :key='index'>
-                <h1>{{item.personName}}:<span>{{item.viewName}}</span></h1>
-                <h3>{{item.title}}<span>{{item.authName}}<span>{{item.date}}<span>{{item.img}}</span></span></span></h3>
+                <h3>{{item.authName}}--{{item.title}}--{{item.date}}</h3>
             </li>
-        </ul>
+        </ol>
     </div>
 </template>
 <!--mockjs应用页面-->
 <script>
-
     export default {
         name: 'HelloWorld',
         data() {
@@ -27,7 +25,6 @@
             showdata() {
 //		import axios from 'axios' 在main.js中引入
 //    Vue.prototype.$http = axios  在main.js中把axios添加到vue原型中，则可在每个组件中调用
-                //this.$http.get('/user') //全局引入使用vue原型中的方法this.$http,已经把axios添加到原型中
                 this.$http.get('/testMock1/list')
                     .then((res) => {
                         console.log(res.data.data)

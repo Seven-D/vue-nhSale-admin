@@ -1,6 +1,6 @@
 <template>
     <div class="app-container">
-        <h1 style="text-align:center">销售报表</h1>
+        <h1 style="text-align:center">数据模拟</h1>
         <pre>{{list}}</pre>
         <el-table
             v-loading="listLoading"
