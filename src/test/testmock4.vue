@@ -31,52 +31,52 @@
                     {{ scope.row.name }}
                 </template>
             </el-table-column>
+            <el-table-column align="center" label="数据0" >
+                <template slot-scope="scope">
+                    {{scope.row.data0}}
+                </template>
+            </el-table-column>
             <el-table-column align="center" label="数据1" >
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.data0 |dataFilter">{{ scope.row.data0 }}</el-tag>
+                    {{scope.row.data1}}
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据2" >
+            <el-table-column align="center" label="数据2">
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.data1 |dataFilter">{{ scope.row.data1 }}</el-tag>
+                    {{ scope.row.data2 }}
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据3">
+            <el-table-column align="center" label="数据3" >
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.data2 |dataFilter">{{ scope.row.data2 }}</el-tag>
+                    {{ scope.row.data3 }}
                 </template>
             </el-table-column>
             <el-table-column align="center" label="数据4" >
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.data3 |dataFilter">{{ scope.row.data3 }}</el-tag>
+                    {{ scope.row.data4 }}
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据5" >
-                <template slot-scope="scope">
-                    <el-tag :type="scope.row.data4 |dataFilter">{{ scope.row.data4 }}</el-tag>
-                </template>
-            </el-table-column>
-            <el-table-column align="center" label="数据6">
+            <el-table-column align="center" label="数据5">
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.data5 |dataFilter">{{ scope.row.data5 }}</el-tag>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据7" >
+            <el-table-column align="center" label="数据6" >
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.data6 |dataFilter">{{ scope.row.data6 }}</el-tag>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据8">
+            <el-table-column align="center" label="数据7">
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.data7 |dataFilter">{{ scope.row.data7 }}</el-tag>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据9">
+            <el-table-column align="center" label="数据8">
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.data8 |dataFilter">{{ scope.row.data8 }}</el-tag>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="数据10" >
+            <el-table-column align="center" label="数据9" >
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.data9 |dataFilter">{{ scope.row.data9 }}</el-tag>
                 </template>
@@ -87,6 +87,7 @@
 </template>
 
 <script>
+
     export default {
         name: "testmock4",
         data() {
@@ -106,12 +107,12 @@
                 } else {
                     res = 'hig';
                 }
-                const addressMap = {   //不同条件显示不同色，提供给标签
-                    hig: 'success',
-                    nom: 'gray',
-                    low: 'danger'
+                const dataMap = {   //不同条件显示不同色，提供给标签
+                    hig: 'gray',
+                    nom: 'success',
+                    low: 'danger',
                 };
-                return addressMap[res]
+                return dataMap[res]
             }
         },
         created() {

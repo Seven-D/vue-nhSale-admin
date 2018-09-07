@@ -39,19 +39,19 @@
 </template>
 
 <script>
-    import {isvalidUsername} from '@/utils/validate'
+    import {isvalidUsername} from '@/utils/validate' //校验用户名
 
     export default {
         name: 'Login',
         data() {
             const validateUsername = (rule, value, callback) => {
-                if (!isvalidUsername(value)) {
+                if (!isvalidUsername(value)) {                          //校验用户名
                     callback(new Error('请输入正确的用户名'))
                 } else {
                     callback()
                 }
             }
-            const validatePass = (rule, value, callback) => {
+            const validatePass = (rule, value, callback) => {     //校验密码
                 if (value.length < 5) {
                     callback(new Error('密码不能小于5位'))
                 } else {
@@ -72,6 +72,7 @@
             }
         },
         methods: {
+            //显示密码
             showPwd() {
                 if (this.pwdType === 'password') {
                     this.pwdType = ''
@@ -79,13 +80,14 @@
                     this.pwdType = 'password'
                 }
             },
+            //登陆动作
             handleLogin() {
                 this.$refs.loginForm.validate(valid => {
                     if (valid) {
                         this.loading = true
                         this.$store.dispatch('Login', this.loginForm).then(() => {
                             this.loading = false
-                            this.$router.push({path: '/'})
+                            this.$router.push({path: '/'}) //登陆成功，路由跳转到主页
                         }).catch(() => {
                             this.loading = false
                         })

@@ -1,8 +1,12 @@
+/*
+*这是登陆模块的API,确定了每个方法具体指向的URL，请求方式get/post，调用repuest方法进行请求，返回数据
+* */
+
 import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login',
+    url: '/login/login',
     method: 'post',
     data: {
       username,
@@ -21,7 +25,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/user/logout',
+    url: '/login/logout',
     method: 'post'
   })
 }

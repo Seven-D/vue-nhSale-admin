@@ -9,7 +9,7 @@ import router from './router'
 import store from './store'
 import '@/icons' // icon
 import '@/permission' // permission control
-
+//import Avatar from 'vue-avatar/dist/Avatar' //自动生成头像组件
 import axios from 'axios'
 import '@/mock/index' // mock 方式，正式发布时，注释掉该处即可
 
