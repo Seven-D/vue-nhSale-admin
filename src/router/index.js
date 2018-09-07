@@ -368,12 +368,26 @@ export const constantRouterMap = [
         name: 'Test',
         meta: {title: '测试', icon: 'table'},
         component: Layout,
-        alwaysShow: true,
         children: [
             {
-                path: '/test1',
+                path: 'test1',
                 meta: {title: '测试1'},
-                component: () => import('@/test/testMockNaxios')
+                component: () => import('@/test/testmock1')
+            },
+            {
+                path: 'test2',
+                meta: {title: '测试2'},
+                component: () => import('@/test/testmock2')
+            },
+            {
+                path: 'test3',
+                meta: {title: '测试3'},
+                component: () => import('@/test/testmock3')
+            },
+            {
+                path: 'test4',
+                meta: {title: '测试4'},
+                component: () => import('@/test/testmock4')
             },
         ]
     },

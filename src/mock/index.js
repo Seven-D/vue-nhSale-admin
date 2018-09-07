@@ -39,7 +39,7 @@ const produceNewData = () => {
     for (let i = 0; i < 10; i++) {
         const newTestObj = {
             title: Random.csentence(5, 30),
-            img: Random.image('150*100', '#894FC4', '#FFF', 'png', 'mockImg'), //生成一段随机的base64图片码
+            img: Random.image('80*80', '#894FC4', '#FFF', 'png', 'mockImg'), //生成一段随机的base64图片码
             authName: Random.cname(), //随机生成中文的名字
             date: Random.date() + ' ' + Random.time() //随机日期时间显示
         };
@@ -51,7 +51,7 @@ const produceNewData = () => {
 };
 
 //模拟数据3，数据模板方式生成
-Mock.mock('/myMockUrl', {
+let tpl = {
     'firstName|2': 'Solo',  //重复Solo这个字符串 2 次，打印出来就是'SoloSolo'。
     'lastName|2-3': 'zh',  //重复zh这个字符串 2-3 次。
     'big|+1': 0,  //属性值自动加 1，初始值为 0
@@ -61,8 +61,36 @@ Mock.mock('/myMockUrl', {
     'friend3|2-3': ['momo', 'yanzi', 'ziwei'],  //通过重复属性值 arr 生成一个新数组，重复次数大于等于 2，小于等于 3。
     'life2|1-2': {'host': 'www.baidu', 'port': '12345', 'node': 'selector'},  //从对象 中随机选取 1 到 2 个属性。
     'regexp1': /^[a-z][A-Z][0-9]$/,  //生成的符合正则表达式的字符串
-});
+};
 
+//模拟数据4，模拟一组生产数据
+let prodData = {
+    'id|4500-4600':4518,
+    'name|8-12': '@cword',
+    'data0|20-100.1-2': 34.5,
+    'data1|0-14.1-2': 7.5,
+    'data2|0-100.1-2': 34.5,
+    'data3|0-100.1-2': 34.5,
+    'data4|0-100.1-2': 34.5,
+    'data5|0-100.1-2': 34.5,
+    'data6|0-200.1-2': 34.5,
+    'data7|0-200.1-2': 34.5,
+    'data8|60-100.1-2': 34.5,
+    'data9|0-1.3': 0.678,
+};
+const prodNewData = () => {
+    let data = [];
+    let ndata = {};
+    for (let i = 0; i < 10; i++) {
+        ndata = Mock.mock(prodData);
+        data.push(ndata);
+    }
+    return {
+        data: data
+    }
+};
 
-Mock.mock('/user', /post|get/i, getdata);////当post或get请求到/user路由时Mock会拦截请求并返回上面的数据
-Mock.mock('/testMock1/list', /post|get/i, produceNewData);
+Mock.mock('/test4', /post|get/i, prodNewData);
+Mock.mock('/test3', /post|get/i, getdata);////当post或get请求到/user路由时Mock会拦截请求并返回上面的数据
+Mock.mock('/test2', /post|get/i, produceNewData);
+Mock.mock('/test1', 'get', tpl);
