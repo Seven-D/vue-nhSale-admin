@@ -2,8 +2,9 @@
     <div>
         <h2 style="text-align: center;">这是一个测试页面</h2>
         <ul>
-            <li><h3>模拟一组生产数据，来自本地mock.js的template生成</h3></li>
-            <li><h3>测试axios的http请求及响应，返回数据，表格显示数据</h3></li>
+            <li><h3>模拟数据来自本地mock.js的 function(option) 生成</h3></li>
+            <li><h3 style="color: green">用封装了axios的request进行请求。import{API},然后调用其中的方法如getList，OK</h3></li>
+            <li><h3 style="color: blue">用 表格 来显示数据：</h3></li>
         </ul>
         <hr/>
         <p>{{listData}}</p>
@@ -26,7 +27,7 @@
                     {{ scope.row.id }}
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="企业名称" width="220">
+            <el-table-column align="center" label="企业名称" >
                 <template slot-scope="scope">
                     {{ scope.row.name }}
                 </template>
@@ -87,8 +88,9 @@
 </template>
 
 <script>
+import {getList} from "../api/table";
 
-    export default {
+export default {
         name: "testmock4",
         data() {
             return {
@@ -121,7 +123,8 @@
         methods: {
             getListData() {
                 this.listLoading = true;
-                this.$http.get('/test4')
+                //用封装了axios的request来请求本地Mock数据，成功
+                getList()
                     .then(res => {
                         this.listData = res.data.data;
                         console.log(res.data.data);

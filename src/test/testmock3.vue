@@ -1,9 +1,10 @@
 <template>
     <div>
-        <h2 style="text-align: center;">这是一个测试页面</h2>
+        <h2 style="text-align: center;">测试页面</h2>
         <ul>
-            <li><h3>模拟数据来自本地mock.js的function(option)生成</h3></li>
-            <li><h3>测试axios的http请求及响应，返回数据，表格显示数据</h3></li>
+            <li><h3>模拟数据来自本地mock.js的 function(option) 生成</h3></li>
+            <li><h3 style="color: green">使用axios进行请求。调用this.axios.get('/test3')</h3></li>
+            <li><h3 style="color: blue">用 表格 来显示数据：</h3></li>
         </ul>
         <hr/>
         <p>{{listData2}}</p>
@@ -107,7 +108,7 @@
         },
         methods: {
             createData() {
-                this.$http.get('/test3')  //请求数据3
+                this.axios.get('/test3')  //请求数据3
                     .then(res => {
                         this.listData2 = res.data.data;
                     })

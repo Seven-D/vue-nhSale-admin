@@ -1,14 +1,15 @@
 <template>
     <div>
-        <h2 style="text-align: center;">这是一个测试页面</h2>
+        <h2 style="text-align: center;">测试页面</h2>
         <ul>
             <li><h3>模拟数据来自本地mock.js的数据模拟template生成</h3></li>
-            <li><h3>测试axios的http请求及响应，返回数据，显示数据</h3></li>
+            <li><h3 style="color: green">测试axios注入Vue原生的$http进行请求。调用this.$http.get('/test1')</h3></li>
+            <li><h3 style="color: blue">用列表来显示数据：</h3></li>
         </ul>
         <hr/>
         <p>{{mkData}}</p>
         <hr/>
-        <h4 style="color: blue">解析，用列表来显示如下：</h4>
+
         <ul>
             <li v-for="item in mkData">
                 <h3>{{item}}</h3>

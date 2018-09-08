@@ -389,6 +389,11 @@ export const constantRouterMap = [
                 meta: {title: '测试4'},
                 component: () => import('@/test/testmock4')
             },
+            {
+                path: 'test5',
+                meta: {title: '测试5'},
+                component: () => import('@/test/testRequest')
+            },
         ]
     },
 //外部链接

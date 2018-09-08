@@ -12,14 +12,14 @@ const userMap = {
         roles: ['admin'],
         token: 'admin',
         introduction: '我是超级管理员',
-        avatar: '@/assets/img/touxiang.gif',
+        avatar: '/src/assets/img/avatar2.gif', //定义头像的图片,要用项目内的绝对地址
         name: 'Super Admin'
     },
     editor: {
         roles: ['editor'],
         token: 'editor',
         introduction: '我是编辑',
-        avatar: '@/assets/img/touxiang.gif',
+        avatar: '/src/assets/img/avatar2.gif',
         name: 'Normal Editor'
     }
 }

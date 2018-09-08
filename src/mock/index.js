@@ -11,7 +11,7 @@ Mock.setup({
 });
 */
 ////当post或get请求到/user路由时Mock会拦截请求并返回上面的数据
-Mock.mock('/test4', /post|get/i, test.prodNewData);
+Mock.mock(/\/table\/list/, /post|get/i, test.prodNewData);
 Mock.mock('/test3', /post|get/i, test.getdata);
 Mock.mock('/test2', /post|get/i, test.produceNewData);
 Mock.mock('/test1', 'get', test.tpl);
