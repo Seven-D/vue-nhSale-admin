@@ -42,7 +42,10 @@
             </el-table-column>
             <el-table-column align="center" label="链接">
                 <template slot-scope="scope">
-                    <a>{{ scope.row.link}}</a>
+                    <a>
+                        <span @click="extLink(scope.row.link)">{{ scope.row.link}}</span>
+                    </a>
+
                 </template>
             </el-table-column>
             <el-table-column align="center" label="时间">
@@ -55,6 +58,7 @@
 </template>
 
 <script>
+    import request from '@/utils/request'
     export default {
         name: "test-request",
         data() {
@@ -68,7 +72,9 @@
         },
         methods: {
             getDataList() {
-                this.axios.post('http://api.komavideo.com/news/list')
+                //request('http://api.komavideo.com/news/list','post') //这句不行，repuest已封装了基地址了,会在这个地址之前加上基地址
+                //this.$http.post('http://api.komavideo.com/news/list') //OK,效果与下面这句相同
+                this.axios.post('http://api.komavideo.com/news/list') //OK
                     .then(res => {
                         this.dataList = res.data;
                         console.log(res);
@@ -76,6 +82,10 @@
                     .catch(err => {
                         console.log(err);
                     })
+            },
+            //在Vue内，用新的页面打开一个外部链接
+            extLink(url) {
+                window.open(url,'_blank'); //‘_blink’参数是相当于<a>标签的'_blank'属性，即新窗口打开
             }
         }
 
@@ -83,5 +93,9 @@
 </script>
 
 <style scoped>
-
+    /*给<a>标签加上样式，鼠标移入，字体变色加上下划线*/
+    a:hover{
+        color:blue;
+        text-decoration: underline;
+    }
 </style>
