@@ -20,6 +20,7 @@ for (let i = 0; i < count; i++) {
 
 //数据的删除操作
 let delData = option => { //option是请求类型
+
     let rType = option.type.toLowerCase(); //将请求类型字符转换为小写，以便以下进行判断
     switch (rType) {
         case 'get':

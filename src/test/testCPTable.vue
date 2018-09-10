@@ -13,13 +13,13 @@
         </div>
         <ul>
             <li v-for="item in userList">
-                {{item.id}}---
-                {{item.name}}---
-                {{item.sex}}---
-                {{item.age}}---
-                {{item.tel}}---
-                {{item.add}}---
-                {{item.comments}}---
+                {{item.id}}**
+                {{item.name}}**
+                {{item.sex}}**
+                {{item.age}}**
+                {{item.tel}}**
+                {{item.add}}**
+                {{item.comments}}**
                 <button @click="deleteList(item.id)">删除</button>
             </li>
         </ul>
@@ -99,7 +99,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     *{
         padding: 0;
         margin: 0;

@@ -23,7 +23,7 @@
       transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
     }
     .scrollbar-wrapper {
-      height: calc(100% + 15px);
+      overflow-x: hidden!important;
       .el-scrollbar__view {
         height: 100%;
       }
@@ -85,7 +85,7 @@
   .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
   .sidebar-container .el-submenu .el-menu-item {
     min-width: 180px !important;
-    background-color: $subMenuBg!important;
+    background-color: $subMenuBg !important;
     &:hover {
       background-color: $menuHover !important;
     }

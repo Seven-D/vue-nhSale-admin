@@ -15,6 +15,8 @@ import '@/icons' // icon
 import '@/permission' // permission control
 import '@/mock/index' // mock 方式，正式发布时，注释掉该处即可
 
+
+
 Vue.prototype.$http = axios;  //全局引入使用vue原型中的方法this.$http,已经把axios添加到原型中
 
 Vue.use(ElementUI, {locale});
