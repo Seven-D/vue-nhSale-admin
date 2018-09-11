@@ -1,11 +1,13 @@
 <template>
     <div>
         <h2 style="text-align: center;">测试页面</h2>
+        <!--
         <ul>
             <li><h3>模拟数据来自本地mock.js的数据模拟template生成</h3></li>
             <li><h3 style="color: green">测试axios注入Vue原生的$http进行请求。调用this.$http.get('/test1')</h3></li>
             <li><h3 style="color: blue">用列表来显示数据：</h3></li>
         </ul>
+        -->
         <hr/>
         <p>{{mkData}}</p>
         <hr/>
@@ -32,7 +34,8 @@
         },
         methods: {
             createData() {
-                this.$http.get('/test1') //请求数据1
+                //this.$http.get('/test1') //请求数据1
+                this.axios.get('http://172.16.29.181:8089/sqltest/tfactory?code=GX01') //与杨总的后台API通讯,OK
                     .then(res => {
                         this.mkData = res.data;//存放数据
                     })

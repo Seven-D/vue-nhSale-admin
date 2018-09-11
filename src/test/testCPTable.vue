@@ -71,13 +71,13 @@
 
             // 增加列表数据
             addList(){
-                // console.log("****"+this.obj);
+                console.log("****"+this.obj);
                 this.axios.post('/add',{
                     params: {
                         obj: this.obj
                     }
                 }).then(res => {
-                    // console.log("请求成功"+res.data.data);
+                     console.log("请求成功"+res.data.data);
                     this.userList = res.data.data;
                 });
             },

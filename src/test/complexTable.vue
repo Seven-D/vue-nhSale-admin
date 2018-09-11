@@ -28,7 +28,7 @@
             -->
         </div>
 
-        <h2 style="text-align: center">复合表格-增删改查</h2>
+        <h2 style="text-align: center">复合表格-增/删/改/查</h2>
 
         <el-table
             v-loading="listLoading"
@@ -97,7 +97,7 @@
         </el-table>
 
         <div class="pagination-container">
-            <el-pagination :current-page="listQuery.page" :page-sizes="[10,20,30, 50]" :page-size="listQuery.limit"
+            <el-pagination :current-page="listQuery.page" :page-sizes="[10,20,30,50]" :page-size="listQuery.limit"
                            :total="total" background layout="total, sizes, prev, pager, next, jumper"
                            @size-change="handleSizeChange" @current-change="handleCurrentChange"/>
         </div>
@@ -153,7 +153,6 @@
 
 <script>
     import {fetchList, fetchPv, createArticle, updateArticle} from '@/api/article'
-    import {parseTime} from '@/utils'
 
     const calendarTypeOptions = [
         {key: 'CN', display_name: 'China'},
@@ -181,6 +180,38 @@
             },
             typeFilter(type) {
                 return calendarTypeKeyValue[type]
+            },
+            parseTime(time, cFormat) {
+                if (arguments.length === 0) {
+                    return null
+                }
+                const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+                let date
+                if (typeof time === 'object') {
+                    date = time
+                } else {
+                    if (('' + time).length === 10) time = parseInt(time) * 1000
+                    date = new Date(time)
+                }
+                const formatObj = {
+                    y: date.getFullYear(),
+                    m: date.getMonth() + 1,
+                    d: date.getDate(),
+                    h: date.getHours(),
+                    i: date.getMinutes(),
+                    s: date.getSeconds(),
+                    a: date.getDay()
+                }
+                const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
+                    let value = formatObj[key]
+                    // Note: getDay() returns 0 on Sunday
+                    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
+                    if (result.length > 0 && value < 10) {
+                        value = '0' + value
+                    }
+                    return value || 0
+                })
+                return time_str
             }
         },
         data() {
@@ -192,9 +223,9 @@
                 listQuery: {
                     page: 1,
                     limit: 20,
-                    importance: '',
-                    title: '',
-                    type: '',
+                    importance: undefined,
+                    title: undefined,
+                    type: undefined,
                     sort: '+id'
                 },
                 importanceOptions: [1, 2, 3],
@@ -240,7 +271,7 @@
                     // Just to simulate the time of the request
                     setTimeout(() => {
                         this.listLoading = false
-                    }, 0.5 * 1000)
+                    }, 0.3 * 1000)
                 })
             },
             handleFilter() {
