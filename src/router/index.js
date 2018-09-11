@@ -371,36 +371,43 @@ export const constantRouterMap = [
         children: [
             {
                 path: 'test1',
+                name:'testmock1',
                 meta: {title: '测试1'},
                 component: () => import('@/test/testmock1')
             },
             {
                 path: 'test2',
+                name:'testmock2',
                 meta: {title: '测试2'},
                 component: () => import('@/test/testmock2')
             },
             {
                 path: 'test3',
+                name:'testmock3',
                 meta: {title: '测试3'},
                 component: () => import('@/test/testmock3')
             },
             {
                 path: 'test4',
+                name:'testmock4',
                 meta: {title: '测试4'},
                 component: () => import('@/test/testmock4')
             },
             {
                 path: 'test5',
+                name:'testRequest',
                 meta: {title: '测试5'},
                 component: () => import('@/test/testRequest')
             },
             {
                 path: 'test6',
+                name:'testCPTable',
                 meta: {title: '测试6'},
                 component: () => import('@/test/testCPTable')
             },
             {
                 path: 'test7',
+                name:'ComplexTable',
                 meta: {title: '测试7'},
                 component: () => import('@/test/complexTable')
             },

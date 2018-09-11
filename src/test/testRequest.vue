@@ -60,7 +60,7 @@
 <script>
     import request from '@/utils/request'
     export default {
-        name: "test-request",
+        name: "testRequest",
         data() {
             return {
                 dataList: null,

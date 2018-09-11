@@ -64,7 +64,7 @@
                     <span style="color:red;">{{ scope.row.reviewer }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="importance" width="110">
+            <el-table-column label="Imp" width="80">
                 <template slot-scope="scope">
                     <svg-icon v-for="n in +scope.row.importance" :key="n" icon-class="star" class="meta-item__icon"/>
                 </template>
