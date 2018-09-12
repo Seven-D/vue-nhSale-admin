@@ -5,7 +5,7 @@
         <el-dropdown class="avatar-container" trigger="click">
             <div class="avatar-wrapper">
                 <!--头像,直接用图片显示 --->
-                <img :src="avatar" class="user-avatar">
+                <img :src="avatar" :username="name" class="user-avatar">
 
                 <!--这是用头像插件avatar，就是根据用户名的文字默认自动生成一个圆形头像 ，src图片要带上绝对地址！
                 <avatar :size="40" :username="name" src="/src/assets/img/avatar2.gif" ></avatar> -->
@@ -73,6 +73,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
     .navbar {
+
         height: 50px;
         line-height: 50px;
         border-radius: 0px !important;
