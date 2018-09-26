@@ -1,19 +1,19 @@
 <template>
     <el-header>
-        这是网页头
+        留一个页头，以便后面加上公司名称或者logo
     </el-header>
 </template>
 
 <script>
 export default {
-
+    name:'nHeader'
 }
 </script>
 
-<style>
+<style scoped>
 .el-header {
     background-color: #B3C0D1;
     color: #333;
-    line-height: 60px;
+    line-height: 50px;
   }
 </style>
